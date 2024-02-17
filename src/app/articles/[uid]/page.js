@@ -87,7 +87,7 @@ export default async function Page({ params }) {
     >
       <Bounded>
         <Link href="/" className="font-semibold tracking-tight text-slate-400">
-          &larr; Back to articles
+          &larr; Back
         </Link>
       </Bounded>
       <article>
@@ -101,23 +101,7 @@ export default async function Page({ params }) {
         </Bounded>
         <SliceZone slices={article.data.slices} components={components} />
       </article>
-      {latestArticles.length > 0 && (
-        <Bounded>
-          <div className="grid grid-cols-1 justify-items-center gap-16 md:gap-24">
-            <HorizontalDivider />
-            <div className="w-full">
-              <Heading size="2xl" className="mb-10">
-                Latest articles
-              </Heading>
-              <ul className="grid grid-cols-1 gap-12">
-                {latestArticles.map((article) => (
-                  <LatestArticle key={article.id} article={article} />
-                ))}
-              </ul>
-            </div>
-          </div>
-        </Bounded>
-      )}
+    
     </Layout>
   );
 }
